@@ -1,15 +1,15 @@
 TAX_RATE = 0.15
 TIME_AND_HALF = 1.5
 
-def main():
-    h,r = get_input()
-    gross_pay = calc_gross_pay(h,r)
+def main(): #typically with main function, it controls the overall structure of the code; it controls the flow of logic, when to call and return, etc. 
+    h,r = get_input() #each of these lines are executed one at a time, this is a VALUE RETURNING function
+    gross_pay = calc_gross_pay(h,r) 
     ot_pay = calc_overtime_pay(r)
     t,b = calc_withholdings(gross_pay,ot_pay)
     net_pay = calc_net_pay(gross_pay,ot_pay,t,b)
     print_paycheck(net_pay)
 
-def get_input():
+def get_input(): #functions that dont require arguments 
     hrs = get_hrs_worked()
     payrate = get_pay_rate()
 
@@ -28,7 +28,7 @@ def get_pay_rate():
     return payrate
 
 
-def calc_gross_pay(hrs,payrate):
+def calc_gross_pay(hrs,payrate): #this requires arguments 
     gross_pay = payrate * hrs
 
     return gross_pay
