@@ -8,7 +8,8 @@ class Coin: #uppercase for class name always
     # sideup data attribute with 'Heads'.
 
     def __init__(self):
-        self.sideup = 'Heads'
+        self.__sideup = 'Heads' #this HIDES attribute, so once u do that, python won't recognize anything as the same
+
 
     # The toss method generates a random number
     # in the range of 0 through 1. If the number
@@ -17,15 +18,15 @@ class Coin: #uppercase for class name always
 
     def toss(self): #this simulates the tossing of the coin
         if random.randint(0, 1) == 0:
-            self.sideup = 'Heads' 
+            self.__sideup = 'Heads' 
         else:
-            self.sideup = 'Tails'
+            self.__sideup = 'Tails'
 
     # The get_sideup method returns the value
     # referenced by sideup.
 
     def get_sideup(self): #returning the value of ur attribute
-            return self.sideup
+            return self.__sideup
 #for objects, you have either an ACCESSOR METHOD or MUTATOR METHOD
 #Accessor: gives u access to an attribute
 #mutator: changes the value of an attribute 
